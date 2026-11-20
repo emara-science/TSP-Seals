@@ -44,13 +44,12 @@ cmake --build build
 ctest --test-dir build --output-on-failure
 ```
 
-The current executable is a harmless diagnostics placeholder. It does not write to USB devices.
+The diagnostics executable now includes early read-only Linux whole-disk discovery (name, /dev path, capacity, and kernel removable flag). Windows device discovery is not implemented yet. The tool never writes to storage.
 
 ## Current status
 
-Milestone 0: repository foundation and architecture scaffold.
-No ISO booting, partitioning, formatting, Secure Boot signing, or physical USB writing is implemented yet.
+Milestone 0 is complete as a repository scaffold. Milestone 1 has begun: read-only Linux storage discovery is implemented. Windows discovery, the desktop app, ISO booting, partitioning, formatting, Secure Boot signing, and physical USB writing are not implemented yet.
 
 ## Verified locally
 
-The CMake build completed and the current CTest suite passed (1/1 test) in the development environment. This is a basic foundation check, not a hardware or UEFI boot test.
+Build and hardware validation for the M1 device-discovery changes are pending. Do not treat this source update as a tested release.
